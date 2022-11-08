@@ -1,3 +1,4 @@
+using ElsaZone.Data.Configurations;
 using ElsaZone.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,11 +10,25 @@ public class ElsaZoneDbContext:DbContext
     public ElsaZoneDbContext(DbContextOptions options) : base(options)
     {
     }
-    
+
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.ApplyConfiguration(new AccountConfiguration());
+        modelBuilder.ApplyConfiguration(new AdminConfiguration());
+        modelBuilder.ApplyConfiguration(new BillConfiguration());
+        modelBuilder.ApplyConfiguration(new BillDetailConfiguration());
+        modelBuilder.ApplyConfiguration(new CartConfiguration());
+        modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+        modelBuilder.ApplyConfiguration(new LanguageConfiguration());
+        modelBuilder.ApplyConfiguration(new ProductConfiguration());
+        modelBuilder.ApplyConfiguration(new ProductImageConfiguration());
+        modelBuilder.ApplyConfiguration(new PromoteConfiguration());
+        modelBuilder.ApplyConfiguration(new RateConfiguration());
+        modelBuilder.ApplyConfiguration(new SystemLogConfiguration());
+        modelBuilder.ApplyConfiguration(new TransactionConfiguration());
     }
-    
+
     public DbSet<Account> Accounts { get; set; }
     public DbSet<Admin> Admins { get; set; }
     public DbSet<Bill> Bills { get; set; }

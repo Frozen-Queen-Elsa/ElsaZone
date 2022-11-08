@@ -15,6 +15,7 @@ public class Account
     public Gender Gender { set; get; }
     public DateTime DOB { get; set; }
     public string Email { get; set; }
+    public string Phone { get; set; }
     public string Avatar { get; set; }
     public decimal MoneyBalance { set; get; }
     public DateTime CreatedDate { set; get; }
@@ -22,5 +23,6 @@ public class Account
     public IsActive IsActive { set; get; }
     public bool IsDeleted { set; get; }
     public DateTime LastLoginDate { get; set; }
+    public int CartId { get; set; }
 
 }
