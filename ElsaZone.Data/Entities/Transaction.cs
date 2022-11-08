@@ -7,7 +7,7 @@ public class Transaction
 {
     public int TransactionId { set; get; }
     public string TransactionDate { set; get; }
-    public DateTime ExternalTransactionId { set; get; }
+    public int ExternalTransactionId { set; get; }
     public decimal Amount { set; get; }
     public decimal Fee { set; get; }
     public string Result { set; get; }
