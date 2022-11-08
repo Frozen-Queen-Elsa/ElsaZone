@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Elsa Solution Items", "0. Elsa Solution Items", "{4D985658-7E40-4484-8042-DD25677D5394}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Elsa Infrastructure", "1. Elsa Infrastructure", "{4A93C3D9-DB0A-4B8E-9DCD-1F86E35FBA21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Elsa Domain", "2. Elsa Domain", "{088EAB71-A987-436E-B1AC-2B2FD033927F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Elsa Hosts", "3. Elsa Hosts", "{D4D2922E-4680-44BE-B4D8-2848EDE0B262}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+EndGlobal
