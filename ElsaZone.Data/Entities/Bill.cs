@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using ElsaZone.Data.Enums.Common;
 using ElsaZone.Data.Enums.Payment;
 
 namespace ElsaZone.Data.Entities;
@@ -9,7 +10,7 @@ public class Bill
     public string BillCode { set; get; }
     public string Name { set; get; }
     public string Email { get; set; }
-    public string Phone { get; set; }
+    public string PhoneNumber { get; set; }
     public string Address { set; get; }
     public string Ward { set; get; }
     public string District { set; get; }
@@ -19,6 +20,7 @@ public class Bill
     public int TotalItems { get; set; }
     public decimal TotalAmount { get; set; }
     public int PaidMethod { get; set; }
-    public bool IsDeleted { set; get; }
+    public IsDeleted IsDeleted { set; get; }
     public int DeliveredStatus { get; set; }
+    /*==========================================*/
 }

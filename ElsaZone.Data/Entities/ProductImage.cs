@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using ElsaZone.Data.Enums.Common;
 
 namespace ElsaZone.Data.Entities;
 [Table("ProductImages")]
@@ -9,6 +10,7 @@ public class ProductImage
     public string Image { set; get; }
     public int CreatedDate { get; set; }
     public decimal UpdatedDate { get; set; }
-    public bool IsDeleted { set; get; }
-    
+    public IsDeleted IsDeleted { set; get; }
+    /*==========================================*/
+    public Product Product { get; set; }
 }
