@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Configurations" />
-      <Folder Include="EF" />
-      <Folder Include="Entities" />
-      <Folder Include="Enums" />
       <Folder Include="Extension" />
       <Folder Include="Migrations" />
     </ItemGroup>
