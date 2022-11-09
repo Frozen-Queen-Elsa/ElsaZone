@@ -15,11 +15,11 @@ public class Admin
     public string Province { set; get; }
     public DateTime CreatedDate { set; get; }
     public DateTime UpdatedDate { set; get; }
-    public Gender Gender { set; get; }
+    public int Gender { set; get; }
     public DateTime DOB { get; set; }
     public string Email { get; set; }
     public string Phone { get; set; }
-    public Role Role { get; set; }
+    public int Role { get; set; }
     public decimal Salary { set; get; }
     public decimal Fine { set; get; }
     public string Description { get; set; }
