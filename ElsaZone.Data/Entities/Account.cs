@@ -12,7 +12,7 @@ public class Account
     public string Password { set; get; }
     public string Username { set; get; }
     public string Fullname { set; get; }
-    public Gender Gender { set; get; }
+    public int Gender { set; get; }
     public DateTime DOB { get; set; }
     public string Email { get; set; }
     public string Phone { get; set; }

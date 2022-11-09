@@ -18,7 +18,7 @@ public class Bill
     public string Note { set; get; }
     public int TotalItems { get; set; }
     public decimal TotalAmount { get; set; }
-    public PaidMethod PaidMethod { get; set; }
+    public int PaidMethod { get; set; }
     public bool IsDeleted { set; get; }
-    public DeliveredStatus DeliveredStatus { get; set; }
+    public int DeliveredStatus { get; set; }
 }
