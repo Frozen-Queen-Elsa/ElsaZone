@@ -21,4 +21,5 @@ public class Product
     public bool IsDeleted { set; get; }
     public Status Status { get; set; }
     public int ViewCount { get; set; }
+
 }

@@ -14,5 +14,6 @@ public class AccountConfiguration:IEntityTypeConfiguration<Account>
         builder.Property(x => x.Password).IsRequired(true).HasMaxLength(50);
         builder.Property(x => x.Username).IsRequired(true).HasMaxLength(50);
         builder.Property(x => x.Phone).HasMaxLength(15);
+        
     }
 }
