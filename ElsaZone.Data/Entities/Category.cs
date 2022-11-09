@@ -9,8 +9,8 @@ public class Category
     public string Name { set; get; }
     public string Description { set; get; }
     public bool IsDeleted { set; get; }
-
+    public bool IsHided { set; get; }
     public Status Status { set; get; }
     
-    public List<Product> Products { get; set; }
+
 }

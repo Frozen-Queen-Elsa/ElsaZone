@@ -1,5 +1,7 @@
+using System.Security.Cryptography;
 using ElsaZone.Data.Configurations;
 using ElsaZone.Data.Entities;
+using ElsaZone.Data.Extension;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -14,6 +16,7 @@ public class ElsaZoneDbContext:DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        //Configure using Fluent API
         modelBuilder.ApplyConfiguration(new AccountConfiguration());
         modelBuilder.ApplyConfiguration(new AdminConfiguration());
         modelBuilder.ApplyConfiguration(new BillConfiguration());
@@ -27,7 +30,8 @@ public class ElsaZoneDbContext:DbContext
         modelBuilder.ApplyConfiguration(new RateConfiguration());
         modelBuilder.ApplyConfiguration(new SystemLogConfiguration());
         modelBuilder.ApplyConfiguration(new TransactionConfiguration());
-        
+        //Data seeding
+        modelBuilder.Seed();
     }
 
     public DbSet<Account> Accounts { get; set; }

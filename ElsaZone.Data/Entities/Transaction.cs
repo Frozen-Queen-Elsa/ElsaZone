@@ -12,6 +12,6 @@ public class Transaction
     public decimal Fee { set; get; }
     public string Result { set; get; }
     public string Message { set; get; }
-    public TransactionStatus Status { set; get; }
+    public int Status { set; get; }
     public string Provider { set; get; }
 }
