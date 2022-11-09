@@ -27,6 +27,7 @@ public class ElsaZoneDbContext:DbContext
         modelBuilder.ApplyConfiguration(new RateConfiguration());
         modelBuilder.ApplyConfiguration(new SystemLogConfiguration());
         modelBuilder.ApplyConfiguration(new TransactionConfiguration());
+        
     }
 
     public DbSet<Account> Accounts { get; set; }

@@ -19,5 +19,6 @@ public class ProductConfiguration:IEntityTypeConfiguration<Product>
         builder.Property(x => x.SEOAlias).IsRequired(true);
         builder.Property(x => x.Quantity).IsRequired(true);
         builder.Property(x => x.SellPrice).IsRequired(true);
+        
     }
 }

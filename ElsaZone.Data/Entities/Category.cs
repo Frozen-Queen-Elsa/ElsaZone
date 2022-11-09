@@ -11,5 +11,6 @@ public class Category
     public bool IsDeleted { set; get; }
 
     public Status Status { set; get; }
-
+    
+    public List<Product> Products { get; set; }
 }
