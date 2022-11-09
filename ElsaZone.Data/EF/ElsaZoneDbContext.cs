@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using ElsaZone.Data.Configurations;
 using ElsaZone.Data.Entities;
 using ElsaZone.Data.Extension;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 

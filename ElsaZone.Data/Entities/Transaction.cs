@@ -14,4 +14,5 @@ public class Transaction
     public string Message { set; get; }
     public int Status { set; get; }
     public string Provider { set; get; }
+    /*==========================================*/
 }

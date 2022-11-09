@@ -17,9 +17,14 @@ public class Product
     public string SEODescription { set; get; }
     public string SEOAlias { set; get; }
     public DateTime CreatedDate { set; get; }
-    public DateTime UpdatedTime { set; get; }
-    public bool IsDeleted { set; get; }
+    public DateTime UpdatedDate { set; get; }
+    public IsDeleted IsDeleted { set; get; }
     public Status Status { get; set; }
     public int ViewCount { get; set; }
-
+    /*==========================================*/
+    public List<Cart> Carts { get; set; }
+    public List<ProductImage> ProductImages { get; set; }
+    public Category Category { get; set; }
+    public List<Rate> Rates { get; set; }
+    
 }

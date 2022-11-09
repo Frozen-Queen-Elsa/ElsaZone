@@ -12,4 +12,5 @@ public class BillDetail
     public int PromoteId { set; get; }
     public decimal Discount { set; get; }
     public decimal ResultPrice { set; get; }
+    /*==========================================*/
 }

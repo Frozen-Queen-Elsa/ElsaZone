@@ -8,5 +8,5 @@ public class SystemLog
     public int AdminId { set; get; }
     public string LogDescription { set; get; }
     public DateTime LogDate { set; get; }
-    
+    /*==========================================*/
 }

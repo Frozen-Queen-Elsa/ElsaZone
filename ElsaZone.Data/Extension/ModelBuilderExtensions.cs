@@ -1,6 +1,7 @@
 using ElsaZone.Data.Entities;
 using ElsaZone.Data.Enums.Common;
 using ElsaZone.Data.Enums.People;
+using ElsaZone.Data.Enums.Promote;
 using ElsaZone.Helper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
@@ -16,18 +17,18 @@ public static class ModelBuilderExtensions
             {
                 AccountId = "meangirl",
                 Password = MD5Helper.MD5Hash("123"),
-                Username = "Frozen Queen Elsa",
+                DisplayName = "Frozen Queen Elsa",
                 Fullname = "Frozen Queen Elsa",
                 Gender = Gender.Female,
                 Email="FrozenQueenElsa@gmail.com",
                 DOB=new DateTime(1992,03,09),
-                Phone="0123456789",
+                PhoneNumber="0123456789",
                 Avatar = null,
                 MoneyBalance = 987654321,
                 CreatedDate = DateTime.Now,
                 UpdatedDate = DateTime.Now,
                 
-                IsDeleted = false,
+                IsDeleted = IsDeleted.Normal,
                 IsActive = IsActive.Offline
             });
      
@@ -45,13 +46,13 @@ public static class ModelBuilderExtensions
                 DOB=new DateTime(1992,03,09),
                 Gender = Gender.Female,
                 Email="admin@gmail.com",
-                Phone="0123456789",
+                PhoneNumber="0123456789",
                 Role = Role.SuperAdmin,
                 CreatedDate = DateTime.Now,
                 UpdatedDate = DateTime.Now,
                 Salary = 123456789,
                 Fine=0,
-                IsDeleted = false,
+                IsDeleted = IsDeleted.Normal,
                 IsActive = IsActive.Offline
         
             });
@@ -59,11 +60,81 @@ public static class ModelBuilderExtensions
             new Category()
             {
                 CategoryId = 1,
-                Name = "Figure",
-                Description = "Tượng",
-                IsDeleted = false,
-                IsHided = false,
+                Name = "Sneaker",
+                Description = "Giày Sneaker",
+                IsDeleted = IsDeleted.Normal,
+                IsHided = IsHided.Normal,
                 Status = Status.Active
+            });
+        modelBuilder.Entity<Language>().HasData(
+            new Language()
+            {
+                LanguageId = 1,
+                Name = "Việt Nam",
+                IsDefault = IsDefault.Normal
+            },
+            new Language()
+            {
+                LanguageId = 2,
+                Name = "English",
+                IsDefault = IsDefault.Default
+            });
+        modelBuilder.Entity<Product>().HasData(
+            new Product()
+            {
+                ProductId = 1,
+                CategoryId = 1,
+                Name = "Balenciaga Triple S Sneaker White",
+                Quantity = 30,
+                OriginalPrice = 20000000,
+                Discount = 0,
+                SellPrice = 25499000,
+                Image = null,
+                SEOTitle = null,
+                SEODescription = null,
+                SEOAlias = "SnBaTrSSnWhite",
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                IsDeleted = IsDeleted.Normal,
+                Status = Status.Active,
+                ViewCount = 0
+            },
+            new Product()
+            {
+                ProductId = 2,
+                CategoryId = 1,
+                Name = "Balenciaga Triple S Sneaker Black",
+                Quantity = 15,
+                OriginalPrice = 21000000,
+                Discount = 0,
+                SellPrice = 27599000,
+                Image = null,
+                SEOTitle = null,
+                SEODescription = null,
+                SEOAlias = "SnBaTrSSnBlack",
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                IsDeleted = IsDeleted.Normal,
+                Status = Status.Active,
+                ViewCount = 0
+            });
+        modelBuilder.Entity<Promote>().HasData(
+            new Promote()
+            {
+                PromoteId = 1,
+                Description = "Black Friday Sale",
+                Name = "Black Friday",
+                CreatedDate = DateTime.Now,
+                UpdatedTime = DateTime.Now,
+                DiscountType = DiscountType.Percent,
+                DiscountValue = 30,
+                BeginDate = new DateTime(2022,11,25,00,00,00),
+                ExpireDate = new DateTime(2022,11,25,23,59,59),
+                ApplyForAll = true,
+                ApplyForCategories = null,
+                ApplyForProductIds = null,
+                PromoteStatus = PromoteStatus.Waiting,
+                IsDeleted = false
             });
     }
 }
