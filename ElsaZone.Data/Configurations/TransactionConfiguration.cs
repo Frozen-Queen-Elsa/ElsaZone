@@ -15,7 +15,7 @@ public class TransactionConfiguration:IEntityTypeConfiguration<Transaction>
         builder.HasKey(x => x.TransactionId);
         builder.Property(x => x.TransactionId).UseIdentityColumn();
         builder.Property(x => x.TransactionDate).HasDefaultValue(DateTime.Now);
-        builder.Property(x => x.Message).HasColumnType("nvarchar(100)");
-        builder.Property(x => x.Provider).HasColumnType("nvarchar(50)");
+        builder.Property(x => x.Message).HasMaxLength(100).HasColumnType("nvarchar(100)");
+        builder.Property(x => x.Provider).HasMaxLength(50).HasColumnType("nvarchar(50)");
     }
 }

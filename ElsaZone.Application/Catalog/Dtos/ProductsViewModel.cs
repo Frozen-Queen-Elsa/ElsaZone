@@ -1,12 +1,12 @@
-using System.ComponentModel.DataAnnotations.Schema;
 using ElsaZone.Data.Enums.Common;
 
-namespace ElsaZone.Data.Entities;
-[Table("Products")]
-public class Product
+namespace ElsaZone.Application.Catalog.Dtos;
+
+public class ProductsViewModel
 {
     public int ProductId { set; get; }
-    public int CategoryId { set; get; }
+
+    public string CategoryName { set; get; }
     public string ProductName { set; get; }
     public int Quantity { get; set; }
     public decimal OriginalPrice { get; set; }
@@ -21,10 +21,5 @@ public class Product
     public IsDeleted IsDeleted { set; get; }
     public Status Status { get; set; }
     public int ViewCount { get; set; }
-    /*==========================================*/
-    public List<Cart> Carts { get; set; }
-    public List<ProductImage> ProductImages { get; set; }
-    public Category Category { get; set; }
-    public List<Rate> Rates { get; set; }
     
 }
