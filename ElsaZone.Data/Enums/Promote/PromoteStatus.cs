@@ -7,4 +7,5 @@ public class PromoteStatus
     public const int Ready = 2;
     public const int Blocked = 3;
     public const int OutOfItems = 4;
+    public const int Waiting = 5;
 }

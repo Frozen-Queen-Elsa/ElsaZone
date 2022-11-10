@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using ElsaZone.Data.Enums.Common;
+
 namespace ElsaZone.Data.Configurations;
 
 public class LanguageConfiguration:IEntityTypeConfiguration<Language>
@@ -14,10 +16,11 @@ public class LanguageConfiguration:IEntityTypeConfiguration<Language>
 
         builder.HasKey(x => x.LanguageId);
         builder.Property(x => x.LanguageId).UseIdentityColumn();
-        builder.Property(x => x.Name).IsRequired(true);
+        builder.Property(x => x.Name).IsRequired(true).HasMaxLength(50).IsUnicode(true);
+        builder.Property(x => x.IsDefault).HasDefaultValue(IsDefault.Normal);
 
-        
 
-       
+
+
     }
 }

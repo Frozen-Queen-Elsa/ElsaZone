@@ -6,4 +6,14 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ElsaZone.Data\ElsaZone.Data.csproj" />
+      <ProjectReference Include="..\ElsaZone.ViewModels\ElsaZone.ViewModels.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+
+    </ItemGroup>
+
 </Project>

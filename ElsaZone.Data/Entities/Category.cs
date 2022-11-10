@@ -6,11 +6,12 @@ namespace ElsaZone.Data.Entities;
 public class Category
 {
     public int CategoryId { set; get; }
-    public string Name { set; get; }
+    public string CategoryName { set; get; }
     public string Description { set; get; }
-    public bool IsDeleted { set; get; }
-    public bool IsHided { set; get; }
+    public IsDeleted IsDeleted { set; get; }
+    public IsHided IsHided { set; get; }
     public Status Status { set; get; }
+    /*==========================================*/
+    public List<Product> Products { get; set; }
     
-
 }
