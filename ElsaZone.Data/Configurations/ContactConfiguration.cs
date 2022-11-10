@@ -16,7 +16,7 @@ public class ContactConfiguration:IEntityTypeConfiguration<Contact>
 
         builder.HasKey(x => x.ContactId);
         builder.Property(x => x.ContactId).UseIdentityColumn();
-        builder.Property(x => x.Name).IsRequired(true).HasMaxLength(50).HasColumnType("nvarchar(50)");
+        builder.Property(x => x.Name).IsRequired(true).HasMaxLength(50).IsUnicode(true);
 
         builder.Property(x => x.Message).IsRequired(true).HasColumnType("ntext");
         builder.Property(x => x.ReadStatus).IsRequired().HasDefaultValue(ReadStatus.Unread);

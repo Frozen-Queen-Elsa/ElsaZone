@@ -1,4 +1,6 @@
-namespace ElsaZone.Application.Catalog.Dtos.Manage;
+using Microsoft.AspNetCore.Http;
+
+namespace ElsaZone.ViewModels.Catalog.Product.Manage;
 
 public class ProductUpdateRequest
 {
@@ -9,7 +11,9 @@ public class ProductUpdateRequest
     public string SEOTitle { set; get; }
     public string SEODescription { set; get; }
     public string SEOAlias { set; get; }
-    
+
+    public IFormFile DefaultImage { get; set; }
+
  
 
 

@@ -16,7 +16,7 @@ public class LanguageConfiguration:IEntityTypeConfiguration<Language>
 
         builder.HasKey(x => x.LanguageId);
         builder.Property(x => x.LanguageId).UseIdentityColumn();
-        builder.Property(x => x.Name).IsRequired(true).HasMaxLength(50).HasColumnType("nvarchar(50)");
+        builder.Property(x => x.Name).IsRequired(true).HasMaxLength(50).IsUnicode(true);
         builder.Property(x => x.IsDefault).HasDefaultValue(IsDefault.Normal);
 
 

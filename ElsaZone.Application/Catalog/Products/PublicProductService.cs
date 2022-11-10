@@ -1,6 +1,4 @@
-using ElsaZone.Application.Catalog.Dtos;
-using ElsaZone.Application.Catalog.Dtos.Public;
-using ElsaZone.Application.Dtos;
+
 using ElsaZone.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,7 +9,9 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using ElsaZone.Data.Enums.Common;
 using ElsaZone.Utilities.Exceptions;
-
+using ElsaZone.ViewModels.Catalog.Product;
+using ElsaZone.ViewModels.Catalog.Product.Public;
+using ElsaZone.ViewModels.Common;
 using Microsoft.Extensions.Configuration;
 namespace ElsaZone.Application.Catalog.Products;
 
@@ -52,7 +52,7 @@ public class PublicProductService:IPublicProductService
                 SEOAlias = x.p.SEOAlias,
                 SEODescription = x.p.SEODescription,
                 SEOTitle = x.p.SEOTitle,
-                Image=x.p.Image,
+    
                 CreatedDate = x.p.CreatedDate,
                 UpdatedDate = x.p.CreatedDate,
                 IsDeleted = x.p.IsDeleted,

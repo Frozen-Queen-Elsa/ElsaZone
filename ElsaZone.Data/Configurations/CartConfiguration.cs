@@ -11,7 +11,7 @@ public class CartConfiguration:IEntityTypeConfiguration<Cart>
 
         builder.HasKey(x => x.CartId);
         builder.Property(x => x.CartId).UseIdentityColumn();
-        //builder.Property(x => x.AccountId).IsRequired(true);
+        builder.Property(x => x.AccountId).IsRequired(true);
         builder.Property(x => x.ProductId).IsRequired(true);
         builder.HasOne(x => x.Product).WithMany(x => x.Carts).HasForeignKey(x => x.ProductId);
         builder.HasOne(x => x.Account).WithMany(x => x.Carts).HasForeignKey(x => x.AccountId);

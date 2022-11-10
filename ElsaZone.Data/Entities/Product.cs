@@ -12,7 +12,7 @@ public class Product
     public decimal OriginalPrice { get; set; }
     public decimal Discount { set; get; }
     public decimal SellPrice { set; get; }
-    public string Image { set; get; }
+    //public string Image { get; set; }
     public string SEOTitle { set; get; }
     public string SEODescription { set; get; }
     public string SEOAlias { set; get; }

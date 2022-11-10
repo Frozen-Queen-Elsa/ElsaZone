@@ -1,7 +1,6 @@
-using ElsaZone.Application.Catalog.Dtos;
-using ElsaZone.Application.Catalog.Dtos.Manage;
+
 using ElsaZone.Application.Catalog.Products.Manage;
-using ElsaZone.Application.Dtos;
+
 using ElsaZone.Data.EF;
 using ElsaZone.Data.Entities;
 
@@ -12,17 +11,27 @@ using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using ElsaZone.Application.Common;
 using ElsaZone.Data.Enums.Common;
 using ElsaZone.Utilities.Exceptions;
+using ElsaZone.ViewModels.Catalog.Product;
+using ElsaZone.ViewModels.Catalog.Product.Manage;
+using ElsaZone.ViewModels.Catalog.Product.Public;
+using ElsaZone.ViewModels.Catalog.ProductImage;
+using ElsaZone.ViewModels.Common;
+using Microsoft.AspNetCore.Http;
 
 namespace ElsaZone.Application.Catalog.Products;
 
 public class ManageProductService:IManageProductService
 {
     private readonly ElsaZoneDbContext _context;
-    public ManageProductService(ElsaZoneDbContext context)
+    private readonly IStorageService _storageService;
+    private const string USER_CONTENT_FOLDER_NAME = "user-content";
+    public ManageProductService(ElsaZoneDbContext context,IStorageService storageService)
     {
         _context = context;
+        _storageService = storageService;
     }
 
 
@@ -43,8 +52,26 @@ public class ManageProductService:IManageProductService
             SEODescription = request.SEODescription,
             SEOTitle = request.SEOTitle,
             Status = Status.Active,
-            IsDeleted = IsDeleted.Normal
+            IsDeleted = IsDeleted.Normal,
         };
+        //Save Image Default
+        if (request.DefaultImage != null)
+        {
+            product.ProductImages = new List<ProductImage>()
+            {
+                new ProductImage()
+                {
+                    Caption = "Thumbnail image",
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now,
+                    FileSize = request.DefaultImage.Length,
+                    ImagePath = await this.SaveFile(request.DefaultImage),
+                    IsDefault = IsDefault.Default,
+                    SortOrder = 1
+                }
+            };
+        }
+
         _context.Products.Add(product);
         return await _context.SaveChangesAsync();
     }
@@ -58,8 +85,17 @@ public class ManageProductService:IManageProductService
         product.SEODescription = request.SEODescription;
         product.SEOTitle = request.SEOTitle;
         product.UpdatedDate=DateTime.Now;
-      
-     
+        if (request.DefaultImage != null)
+        {
+            var defaultimage = await _context.ProductImages.FirstOrDefaultAsync(i => i.IsDefault==IsDefault.Default && i.ProductId == request.ProductId);
+            if (defaultimage != null)
+            {
+                defaultimage.FileSize = request.DefaultImage.Length;
+                defaultimage.ImagePath = await this.SaveFile(request.DefaultImage);
+                _context.ProductImages.Update(defaultimage);
+            }
+        }
+
         return await _context.SaveChangesAsync();
     }
 
@@ -113,6 +149,86 @@ public class ManageProductService:IManageProductService
         await _context.SaveChangesAsync();
     }
 
+    public async Task<int> AddImage(int productId, ProductImageCreateRequest request)
+    {
+        var productImage = new ProductImage()
+        {
+            Caption = request.Caption,
+            CreatedDate = DateTime.Now,
+            IsDefault = IsDefault.Normal,
+            ProductId = productId,
+            SortOrder = request.SortOrder
+        };
+
+        if (request.ImageFile != null)
+        {
+            productImage.ImagePath = await this.SaveFile(request.ImageFile);
+            productImage.FileSize = request.ImageFile.Length;
+        }
+        _context.ProductImages.Add(productImage);
+        await _context.SaveChangesAsync();
+        return productImage.ProductImageId;
+    }
+
+    public async Task<int> RemoveImage(int ProductImageId)
+    {
+        var productImage = await _context.ProductImages.FindAsync(ProductImageId);
+        if (productImage == null)
+            throw new ElsazoneException($"Cannot find an image with id {ProductImageId}");
+        _context.ProductImages.Remove(productImage);
+        return await _context.SaveChangesAsync();
+    }
+
+    public async Task<int> UpdateImage(int ProductImageId, ProductImageUpdateRequest request)
+    {
+        var productImage = await _context.ProductImages.FindAsync(ProductImageId);
+        if (productImage == null)
+            throw new ElsazoneException($"Cannot find an image with id {ProductImageId}");
+
+        if (request.ImageFile != null)
+        {
+            productImage.ImagePath = await this.SaveFile(request.ImageFile);
+            productImage.FileSize = request.ImageFile.Length;
+        }
+        _context.ProductImages.Update(productImage);
+        return await _context.SaveChangesAsync();
+    }
+
+    public async Task<ProductImageViewModel> GetImageById(int ProductImageId)
+    {
+        var image = await _context.ProductImages.FindAsync(ProductImageId);
+        if (image == null)
+            throw new ElsazoneException($"Cannot find an image with id {ProductImageId}");
+
+        var viewModel = new ProductImageViewModel()
+        {
+            Caption = image.Caption,
+            CreatedDate = image.CreatedDate,
+            FileSize = image.FileSize,
+            ProductImageId = image.ProductImageId,
+            ImagePath = image.ImagePath,
+            IsDefault = image.IsDefault,
+            ProductId = image.ProductId,
+            SortOrder = image.SortOrder
+        };
+        return viewModel;
+    }
+
+    public async Task<List<ProductImageViewModel>> GetListImages(int ProductId)
+    {
+        return await _context.ProductImages.Where(x => x.ProductId == ProductId)
+            .Select(i => new ProductImageViewModel()
+            {
+                Caption = i.Caption,
+                CreatedDate = i.CreatedDate,
+                FileSize = i.FileSize,
+                ProductImageId = i.ProductImageId,
+                ImagePath = i.ImagePath,
+                IsDefault = i.IsDefault,
+                ProductId = i.ProductId,
+                SortOrder = i.SortOrder
+            }).ToListAsync();
+    }
 
 
     public async Task<PagedResultBase<ProductsViewModel>> GetAllPaging(GetProductPagingRequest request)
@@ -146,7 +262,7 @@ public class ManageProductService:IManageProductService
                     SEOAlias = x.p.SEOAlias,
                     SEODescription = x.p.SEODescription,
                     SEOTitle = x.p.SEOTitle,
-                    Image=x.p.Image,
+           
                     CreatedDate = x.p.CreatedDate,
                     UpdatedDate = x.p.CreatedDate,
                     IsDeleted = x.p.IsDeleted,
@@ -166,4 +282,14 @@ public class ManageProductService:IManageProductService
             };
             return pagedResult;
     }
+
+    private async Task<string> SaveFile(IFormFile file)
+    {
+        var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+        var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+        await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
+       
+        return "/" + "USER_CONTENT_FOLDER_NAME" + "/" + fileName;
+    }
+    
 }
