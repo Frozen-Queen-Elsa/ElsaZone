@@ -2,7 +2,7 @@ using ElsaZone.Data.Entities;
 using ElsaZone.Data.Enums.Common;
 using ElsaZone.Data.Enums.People;
 using ElsaZone.Data.Enums.Promote;
-using ElsaZone.Helper;
+using ElsaZone.Utilities.Helper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 namespace ElsaZone.Data.Extension;
@@ -60,7 +60,7 @@ public static class ModelBuilderExtensions
             new Category()
             {
                 CategoryId = 1,
-                Name = "Sneaker",
+                CategoryName =  "Sneaker",
                 Description = "Giày Sneaker",
                 IsDeleted = IsDeleted.Normal,
                 IsHided = IsHided.Normal,
@@ -84,7 +84,7 @@ public static class ModelBuilderExtensions
             {
                 ProductId = 1,
                 CategoryId = 1,
-                Name = "Balenciaga Triple S Sneaker White",
+                ProductName = "Balenciaga Triple S Sneaker White",
                 Quantity = 30,
                 OriginalPrice = 20000000,
                 Discount = 0,
@@ -103,7 +103,7 @@ public static class ModelBuilderExtensions
             {
                 ProductId = 2,
                 CategoryId = 1,
-                Name = "Balenciaga Triple S Sneaker Black",
+                ProductName = "Balenciaga Triple S Sneaker Black",
                 Quantity = 15,
                 OriginalPrice = 21000000,
                 Discount = 0,

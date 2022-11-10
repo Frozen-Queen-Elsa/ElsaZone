@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ElsaZone.Data\ElsaZone.Data.csproj" />
+    </ItemGroup>
+
 </Project>

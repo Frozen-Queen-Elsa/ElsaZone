@@ -1336,6 +1336,16 @@
             "rid": "win"
           }
         }
+      },
+      "ElsaZone.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/ElsaZone.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ElsaZone.Utilities.dll": {}
+        }
       }
     }
   },
@@ -3911,10 +3921,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ElsaZone.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../ElsaZone.Utilities/ElsaZone.Utilities.csproj",
+      "msbuildProject": "../ElsaZone.Utilities/ElsaZone.Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "ElsaZone.Utilities >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.0",
@@ -3949,7 +3965,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\NamViet\\ElsaZone\\ElsaZone.Utilities\\ElsaZone.Utilities.csproj": {
+              "projectPath": "D:\\NamViet\\ElsaZone\\ElsaZone.Utilities\\ElsaZone.Utilities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

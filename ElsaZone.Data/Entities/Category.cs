@@ -6,7 +6,7 @@ namespace ElsaZone.Data.Entities;
 public class Category
 {
     public int CategoryId { set; get; }
-    public string Name { set; get; }
+    public string CategoryName { set; get; }
     public string Description { set; get; }
     public IsDeleted IsDeleted { set; get; }
     public IsHided IsHided { set; get; }
