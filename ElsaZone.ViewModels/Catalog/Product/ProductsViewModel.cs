@@ -1,6 +1,6 @@
 using ElsaZone.Data.Enums.Common;
 
-namespace ElsaZone.Application.Catalog.Dtos;
+namespace ElsaZone.ViewModels.Catalog.Product;
 
 public class ProductsViewModel
 {
@@ -12,7 +12,7 @@ public class ProductsViewModel
     public decimal OriginalPrice { get; set; }
     public decimal Discount { set; get; }
     public decimal SellPrice { set; get; }
-    public string Image { set; get; }
+
     public string SEOTitle { set; get; }
     public string SEODescription { set; get; }
     public string SEOAlias { set; get; }

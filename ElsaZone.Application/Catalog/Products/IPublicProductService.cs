@@ -1,7 +1,7 @@
 
-using ElsaZone.Application.Catalog.Dtos;
-using ElsaZone.Application.Catalog.Dtos.Public;
-using ElsaZone.Application.Dtos;
+using ElsaZone.ViewModels.Catalog.Product;
+using ElsaZone.ViewModels.Catalog.Product.Public;
+using ElsaZone.ViewModels.Common;
 
 namespace ElsaZone.Application.Catalog.Products;
 

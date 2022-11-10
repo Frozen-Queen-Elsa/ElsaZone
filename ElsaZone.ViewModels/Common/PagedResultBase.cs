@@ -1,4 +1,4 @@
-namespace ElsaZone.Application.Dtos;
+namespace ElsaZone.ViewModels.Common;
 
 public class PagedResultBase<T>
 {

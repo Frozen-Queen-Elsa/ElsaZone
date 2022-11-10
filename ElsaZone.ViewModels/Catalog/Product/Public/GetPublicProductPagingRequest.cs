@@ -1,6 +1,6 @@
-using ElsaZone.Application.Dtos;
+using ElsaZone.ViewModels.Common;
 
-namespace ElsaZone.Application.Catalog.Dtos.Public;
+namespace ElsaZone.ViewModels.Catalog.Product.Public;
 
 public class GetPublicProductPagingRequest:PagingRequestBase
 {
