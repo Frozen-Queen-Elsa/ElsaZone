@@ -9,4 +9,5 @@ public class SystemLog
     public string LogDescription { set; get; }
     public DateTime LogDate { set; get; }
     /*==========================================*/
+    public Admin Admin { get; set; } 
 }

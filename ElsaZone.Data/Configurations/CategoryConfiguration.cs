@@ -16,9 +16,9 @@ public class CategoryConfiguration:IEntityTypeConfiguration<Category>
         builder.Property(x => x.IsHided).IsRequired().HasDefaultValue(IsHided.Normal);
         builder.Property(x => x.IsDeleted).IsRequired().HasDefaultValue(IsDeleted.Normal);
         builder.Property(x => x.Status).IsRequired().HasDefaultValue(Status.Active);
+        builder.Property(x => x.Description).IsRequired(false).HasMaxLength(100).IsUnicode(true);
 
-        
 
-       
+
     }
 }

@@ -22,8 +22,8 @@ public class BillConfiguration:IEntityTypeConfiguration<Bill>
         builder.Property(x => x.Email).HasMaxLength(100).IsUnicode(false);
         builder.Property(x => x.PhoneNumber).HasMaxLength(20).IsUnicode(false);
         builder.Property(x => x.DeliveredStatus).HasDefaultValue(DeliveredStatus.Waiting);
-        builder.Property(x => x.CreatedDate).IsRequired().HasDefaultValue(DateTime.Now);
-
+        builder.Property(x => x.CreatedDate).IsRequired().HasDefaultValueSql("getdate()");
+        builder.Property(x => x.Note).IsRequired(false).IsUnicode().HasMaxLength(200);
         builder.Property(x => x.IsDeleted).IsRequired().HasDefaultValue(IsDeleted.Normal);
     }
 }

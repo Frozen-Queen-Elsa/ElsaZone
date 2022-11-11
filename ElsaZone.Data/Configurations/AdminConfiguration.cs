@@ -18,12 +18,12 @@ public class AdminConfiguration:IEntityTypeConfiguration<Admin>
         builder.Property(x => x.Fullname).HasMaxLength(100).IsUnicode(true);
         builder.Property(x => x.PhoneNumber).HasMaxLength(20).IsUnicode(false);
         builder.Property(x => x.Address).HasMaxLength(50).IsUnicode(true);
-        builder.Property(x => x.Ward).HasMaxLength(50).IsUnicode(true);
-        builder.Property(x => x.District).HasMaxLength(50).IsUnicode(true);
-        builder.Property(x => x.Province).HasMaxLength(50).IsUnicode(true);
+        builder.Property(x => x.Ward).IsRequired(false).HasMaxLength(50).IsUnicode(true);
+        builder.Property(x => x.District).IsRequired(false).HasMaxLength(50).IsUnicode(true);
+        builder.Property(x => x.Province).IsRequired(false).HasMaxLength(50).IsUnicode(true);
         builder.Property(x => x.Email).HasMaxLength(100).IsUnicode(false);
-        builder.Property(x => x.CreatedDate).IsRequired().HasDefaultValue(DateTime.Now);
-        builder.Property(x => x.UpdatedDate).IsRequired().HasDefaultValue(DateTime.Now);
+        builder.Property(x => x.CreatedDate).IsRequired().HasDefaultValueSql("getdate()");
+        builder.Property(x => x.UpdatedDate).IsRequired().HasDefaultValueSql("getdate()");
         builder.Property(x => x.IsActive).IsRequired().HasDefaultValue(IsActive.Offline);
         builder.Property(x => x.IsDeleted).IsRequired().HasDefaultValue(IsDeleted.Normal);
     }
