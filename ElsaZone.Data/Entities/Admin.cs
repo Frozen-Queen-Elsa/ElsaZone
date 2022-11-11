@@ -28,4 +28,5 @@ public class Admin
     public IsDeleted IsDeleted { set; get; }
     public DateTime LastLoginDate { get; set; }
     /*==========================================*/
+    public List<SystemLog> SystemLogs { get; set; }
 }

@@ -16,6 +16,6 @@ public class SystemLogConfiguration:IEntityTypeConfiguration<SystemLog>
         builder.Property(x => x.LogId).UseIdentityColumn();
         builder.Property(x => x.AdminId).IsRequired(true);
         builder.Property(x => x.LogDescription).IsRequired(true).HasMaxLength(255);
-        builder.Property(x => x.LogDate).IsRequired(true).HasDefaultValue(DateTime.Now);
+        builder.Property(x => x.LogDate).IsRequired(true).HasDefaultValueSql("getdate()");
     }
 }

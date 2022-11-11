@@ -1,6 +1,3 @@
-
-using ElsaZone.Application.Catalog.Products.Manage;
-
 using ElsaZone.Data.EF;
 using ElsaZone.Data.Entities;
 
@@ -15,8 +12,6 @@ using ElsaZone.Application.Common;
 using ElsaZone.Data.Enums.Common;
 using ElsaZone.Utilities.Exceptions;
 using ElsaZone.ViewModels.Catalog.Product;
-using ElsaZone.ViewModels.Catalog.Product.Manage;
-using ElsaZone.ViewModels.Catalog.Product.Public;
 using ElsaZone.ViewModels.Catalog.ProductImage;
 using ElsaZone.ViewModels.Common;
 using Microsoft.AspNetCore.Http;
@@ -231,7 +226,7 @@ public class ManageProductService:IManageProductService
     }
 
 
-    public async Task<PagedResultBase<ProductsViewModel>> GetAllPaging(GetProductPagingRequest request)
+    public async Task<PagedResultBase<ProductsViewModel>> GetAllPaging(GetManageProductPagingRequest request)
     {
         //1. Select join
             var query = from p in _context.Products

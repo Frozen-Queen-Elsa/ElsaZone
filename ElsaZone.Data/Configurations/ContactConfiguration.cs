@@ -17,10 +17,10 @@ public class ContactConfiguration:IEntityTypeConfiguration<Contact>
         builder.HasKey(x => x.ContactId);
         builder.Property(x => x.ContactId).UseIdentityColumn();
         builder.Property(x => x.Name).IsRequired(true).HasMaxLength(50).IsUnicode(true);
-
+        builder.Property(x => x.Email).IsRequired(false).IsUnicode(false).HasMaxLength(100);
         builder.Property(x => x.Message).IsRequired(true).HasColumnType("ntext");
         builder.Property(x => x.ReadStatus).IsRequired().HasDefaultValue(ReadStatus.Unread);
+        builder.Property(x => x.PhoneNumber).HasMaxLength(20).IsUnicode(false).IsRequired(false);
 
-       
     }
 }

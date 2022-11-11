@@ -23,7 +23,7 @@ public static class ModelBuilderExtensions
                 Email="FrozenQueenElsa@gmail.com",
                 DOB=new DateTime(1992,03,09),
                 PhoneNumber="0123456789",
-                Avatar = null,
+                Avatar = "123",
                 MoneyBalance = 987654321,
                 CreatedDate = DateTime.Now,
                 UpdatedDate = DateTime.Now,
@@ -39,10 +39,10 @@ public static class ModelBuilderExtensions
                 Username = "superadmin",
                 Password = MD5Helper.MD5Hash("123"),
                 Fullname = "Super Admin",
-                Address = null,
-                Ward = null,
-                District = null,
-                Province = null,
+                Address = "123",
+                Ward = "Phường 3",
+                District = "Quận 1",
+                Province = "TPHCM",
                 DOB=new DateTime(1992,03,09),
                 Gender = Gender.Female,
                 Email="admin@gmail.com",
@@ -53,8 +53,8 @@ public static class ModelBuilderExtensions
                 Salary = 123456789,
                 Fine=0,
                 IsDeleted = IsDeleted.Normal,
-                IsActive = IsActive.Offline
-        
+                IsActive = IsActive.Offline,
+                Description="Boss"
             });
         modelBuilder.Entity<Category>().HasData(
             new Category()
@@ -90,8 +90,8 @@ public static class ModelBuilderExtensions
                 Discount = 0,
                 SellPrice = 25499000,
                 //Image = null,
-                SEOTitle = null,
-                SEODescription = null,
+                SEOTitle = "WhiteBalen",
+                SEODescription = "ABC",
                 SEOAlias = "SnBaTrSSnWhite",
                 CreatedDate = DateTime.Now,
                 UpdatedDate = DateTime.Now,
@@ -109,8 +109,8 @@ public static class ModelBuilderExtensions
                 Discount = 0,
                 SellPrice = 27599000,
                 //Image = null,
-                SEOTitle = null,
-                SEODescription = null,
+                SEOTitle = "BlackBalen",
+                SEODescription = "abc",
                 SEOAlias = "SnBaTrSSnBlack",
                 CreatedDate = DateTime.Now,
                 UpdatedDate = DateTime.Now,
@@ -131,8 +131,8 @@ public static class ModelBuilderExtensions
                 BeginDate = new DateTime(2022,11,25,00,00,00),
                 ExpireDate = new DateTime(2022,11,25,23,59,59),
                 ApplyForAll = true,
-                ApplyForCategories = null,
-                ApplyForProductIds = null,
+                ApplyForCategories = "123",
+                ApplyForProductIds = "123",
                 PromoteStatus = PromoteStatus.Waiting,
                 IsDeleted = false
             });

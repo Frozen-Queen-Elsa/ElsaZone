@@ -1,0 +1,17 @@
+D:\NamViet\ElsaZone\ElsaZone.Data\bin\Debug\net7.0\ElsaZone.Data.deps.json
+D:\NamViet\ElsaZone\ElsaZone.Data\bin\Debug\net7.0\ElsaZone.Data.runtimeconfig.json
+D:\NamViet\ElsaZone\ElsaZone.Data\bin\Debug\net7.0\ElsaZone.Data.dll
+D:\NamViet\ElsaZone\ElsaZone.Data\bin\Debug\net7.0\ElsaZone.Data.pdb
+D:\NamViet\ElsaZone\ElsaZone.Data\bin\Debug\net7.0\ElsaZone.Utilities.dll
+D:\NamViet\ElsaZone\ElsaZone.Data\bin\Debug\net7.0\ElsaZone.Utilities.pdb
+D:\NamViet\ElsaZone\ElsaZone.Data\obj\Debug\net7.0\ElsaZone.Data.csproj.AssemblyReference.cache
+D:\NamViet\ElsaZone\ElsaZone.Data\obj\Debug\net7.0\ElsaZone.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\NamViet\ElsaZone\ElsaZone.Data\obj\Debug\net7.0\ElsaZone.Data.AssemblyInfoInputs.cache
+D:\NamViet\ElsaZone\ElsaZone.Data\obj\Debug\net7.0\ElsaZone.Data.AssemblyInfo.cs
+D:\NamViet\ElsaZone\ElsaZone.Data\obj\Debug\net7.0\ElsaZone.Data.csproj.CoreCompileInputs.cache
+D:\NamViet\ElsaZone\ElsaZone.Data\obj\Debug\net7.0\ElsaZone.Data.csproj.CopyComplete
+D:\NamViet\ElsaZone\ElsaZone.Data\obj\Debug\net7.0\ElsaZone.Data.dll
+D:\NamViet\ElsaZone\ElsaZone.Data\obj\Debug\net7.0\refint\ElsaZone.Data.dll
+D:\NamViet\ElsaZone\ElsaZone.Data\obj\Debug\net7.0\ElsaZone.Data.pdb
+D:\NamViet\ElsaZone\ElsaZone.Data\obj\Debug\net7.0\ElsaZone.Data.genruntimeconfig.cache
+D:\NamViet\ElsaZone\ElsaZone.Data\obj\Debug\net7.0\ref\ElsaZone.Data.dll

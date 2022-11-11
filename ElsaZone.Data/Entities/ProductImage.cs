@@ -7,14 +7,16 @@ public class ProductImage
 {
     public int ProductImageId { set; get; }
     public int ProductId { set; get; }
+    public string Caption { get; set; }
     public string ImagePath { set; get; }
+    public long FileSize { get; set; }
+    
     public DateTime CreatedDate { get; set; }
     public DateTime UpdatedDate { get; set; }
 
     public IsDefault IsDefault { get; set; }
     public int SortOrder { get; set; }
-    public long FileSize { get; set; }
-    public string Caption { get; set; }
+    
     /*==========================================*/
     public Product Product { get; set; }
 }

@@ -1,0 +1,12 @@
+D:\NamViet\ElsaZone\ElsaZone.ApiIntegration\bin\Debug\net7.0\ElsaZone.ApiIntegration.deps.json
+D:\NamViet\ElsaZone\ElsaZone.ApiIntegration\bin\Debug\net7.0\ElsaZone.ApiIntegration.dll
+D:\NamViet\ElsaZone\ElsaZone.ApiIntegration\bin\Debug\net7.0\ElsaZone.ApiIntegration.pdb
+D:\NamViet\ElsaZone\ElsaZone.ApiIntegration\obj\Debug\net7.0\ElsaZone.ApiIntegration.csproj.AssemblyReference.cache
+D:\NamViet\ElsaZone\ElsaZone.ApiIntegration\obj\Debug\net7.0\ElsaZone.ApiIntegration.GeneratedMSBuildEditorConfig.editorconfig
+D:\NamViet\ElsaZone\ElsaZone.ApiIntegration\obj\Debug\net7.0\ElsaZone.ApiIntegration.AssemblyInfoInputs.cache
+D:\NamViet\ElsaZone\ElsaZone.ApiIntegration\obj\Debug\net7.0\ElsaZone.ApiIntegration.AssemblyInfo.cs
+D:\NamViet\ElsaZone\ElsaZone.ApiIntegration\obj\Debug\net7.0\ElsaZone.ApiIntegration.csproj.CoreCompileInputs.cache
+D:\NamViet\ElsaZone\ElsaZone.ApiIntegration\obj\Debug\net7.0\ElsaZone.ApiIntegration.dll
+D:\NamViet\ElsaZone\ElsaZone.ApiIntegration\obj\Debug\net7.0\refint\ElsaZone.ApiIntegration.dll
+D:\NamViet\ElsaZone\ElsaZone.ApiIntegration\obj\Debug\net7.0\ElsaZone.ApiIntegration.pdb
+D:\NamViet\ElsaZone\ElsaZone.ApiIntegration\obj\Debug\net7.0\ref\ElsaZone.ApiIntegration.dll

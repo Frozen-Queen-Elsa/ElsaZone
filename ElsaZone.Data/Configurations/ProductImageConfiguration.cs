@@ -18,12 +18,12 @@ public class ProductImageConfiguration:IEntityTypeConfiguration<ProductImage>
         builder.Property(x => x.ProductImageId).UseIdentityColumn();
         builder.Property(x => x.ProductId).IsRequired(true);
         builder.Property(x => x.ImagePath).HasMaxLength(255).IsUnicode(false);
-        builder.Property(x => x.CreatedDate).IsRequired().HasDefaultValue(DateTime.Now);
-        builder.Property(x => x.UpdatedDate).IsRequired().HasDefaultValue(DateTime.Now);
+        builder.Property(x => x.CreatedDate).IsRequired().HasDefaultValueSql("getdate()");
+        builder.Property(x => x.UpdatedDate).IsRequired().HasDefaultValueSql("getdate()");
         builder.HasOne(x => x.Product).WithMany(x => x.ProductImages).HasForeignKey(x => x.ProductId);
         builder.Property(x => x.IsDefault).IsRequired().HasDefaultValue(IsDefault.Normal);
+        builder.Property(x => x.Caption).IsUnicode().HasMaxLength(100).IsRequired(false);
 
 
-       
     }
 }

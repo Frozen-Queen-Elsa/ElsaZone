@@ -7,7 +7,7 @@ public class Rate
 {
     public int RateId { set; get; }
     public int ProductId { set; get; }
-    public int AccountId { set; get; }
+    public string AccountId { set; get; }
     public decimal Star { set; get; }
     public string Comment { set; get; }
     public DateTime CreatedDate { set; get; }

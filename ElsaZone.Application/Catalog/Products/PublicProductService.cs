@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using ElsaZone.Data.Enums.Common;
 using ElsaZone.Utilities.Exceptions;
 using ElsaZone.ViewModels.Catalog.Product;
-using ElsaZone.ViewModels.Catalog.Product.Public;
 using ElsaZone.ViewModels.Common;
 using Microsoft.Extensions.Configuration;
 namespace ElsaZone.Application.Catalog.Products;
@@ -70,5 +69,34 @@ public class PublicProductService:IPublicProductService
             Items = data
         };
         return pagedResult;
+    }
+
+    public async Task<List<ProductsViewModel>> GetAll()
+    {
+        var query = from p in _context.Products
+            join c in _context.Categories on p.CategoryId equals c.CategoryId
+            select new { p, c };
+        
+        var data = await query
+            .Select(x => new ProductsViewModel()
+            {
+                ProductId =  x.p.ProductId,
+                ProductName = x.p.ProductName,
+                CategoryName=x.c.CategoryName,
+                OriginalPrice = x.p.OriginalPrice,
+                SellPrice = x.p.OriginalPrice,
+                Discount = x.p.Discount,
+                SEOAlias = x.p.SEOAlias,
+                SEODescription = x.p.SEODescription,
+                SEOTitle = x.p.SEOTitle,
+    
+                CreatedDate = x.p.CreatedDate,
+                UpdatedDate = x.p.CreatedDate,
+                IsDeleted = x.p.IsDeleted,
+                Status = x.p.Status,
+                ViewCount = x.p.ViewCount,
+                
+            }).ToListAsync();
+        return data;
     }
 }

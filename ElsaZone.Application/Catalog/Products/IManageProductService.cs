@@ -1,12 +1,8 @@
-
 using ElsaZone.ViewModels.Catalog.Product;
-using ElsaZone.ViewModels.Catalog.Product.Manage;
-using ElsaZone.ViewModels.Catalog.Product.Public;
 using ElsaZone.ViewModels.Catalog.ProductImage;
 using ElsaZone.ViewModels.Common;
-using Microsoft.AspNetCore.Http;
 
-namespace ElsaZone.Application.Catalog.Products.Manage;
+namespace ElsaZone.Application.Catalog.Products;
 
 public interface IManageProductService
 {
@@ -24,6 +20,6 @@ public interface IManageProductService
     Task<ProductImageViewModel> GetImageById(int ProductImageId);
     Task<List<ProductImageViewModel>> GetListImages(int ProductId);
 
-    Task<PagedResultBase<ProductsViewModel>> GetAllPaging(GetProductPagingRequest request);
+    Task<PagedResultBase<ProductsViewModel>> GetAllPaging(GetManageProductPagingRequest request);
     
 }
