@@ -1,0 +1,17 @@
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\bin\Debug\net7.0\ElsaZone.ViewModels.deps.json
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\bin\Debug\net7.0\ElsaZone.ViewModels.dll
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\bin\Debug\net7.0\ElsaZone.ViewModels.pdb
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\bin\Debug\net7.0\ElsaZone.Data.dll
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\bin\Debug\net7.0\ElsaZone.Utilities.dll
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\bin\Debug\net7.0\ElsaZone.Data.pdb
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\bin\Debug\net7.0\ElsaZone.Utilities.pdb
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\obj\Debug\net7.0\ElsaZone.ViewModels.csproj.AssemblyReference.cache
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\obj\Debug\net7.0\ElsaZone.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\obj\Debug\net7.0\ElsaZone.ViewModels.AssemblyInfoInputs.cache
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\obj\Debug\net7.0\ElsaZone.ViewModels.AssemblyInfo.cs
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\obj\Debug\net7.0\ElsaZone.ViewModels.csproj.CoreCompileInputs.cache
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\obj\Debug\net7.0\ElsaZone.ViewModels.csproj.CopyComplete
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\obj\Debug\net7.0\ElsaZone.ViewModels.dll
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\obj\Debug\net7.0\refint\ElsaZone.ViewModels.dll
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\obj\Debug\net7.0\ElsaZone.ViewModels.pdb
+D:\NamViet\ElsaZone\ElsaZone.ViewModels\obj\Debug\net7.0\ref\ElsaZone.ViewModels.dll

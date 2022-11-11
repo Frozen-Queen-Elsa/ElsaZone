@@ -1,0 +1,12 @@
+D:\NamViet\ElsaZone\ElsaZone.Utilities\bin\Debug\net7.0\ElsaZone.Utilities.deps.json
+D:\NamViet\ElsaZone\ElsaZone.Utilities\bin\Debug\net7.0\ElsaZone.Utilities.dll
+D:\NamViet\ElsaZone\ElsaZone.Utilities\bin\Debug\net7.0\ElsaZone.Utilities.pdb
+D:\NamViet\ElsaZone\ElsaZone.Utilities\obj\Debug\net7.0\ElsaZone.Utilities.csproj.AssemblyReference.cache
+D:\NamViet\ElsaZone\ElsaZone.Utilities\obj\Debug\net7.0\ElsaZone.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\NamViet\ElsaZone\ElsaZone.Utilities\obj\Debug\net7.0\ElsaZone.Utilities.AssemblyInfoInputs.cache
+D:\NamViet\ElsaZone\ElsaZone.Utilities\obj\Debug\net7.0\ElsaZone.Utilities.AssemblyInfo.cs
+D:\NamViet\ElsaZone\ElsaZone.Utilities\obj\Debug\net7.0\ElsaZone.Utilities.csproj.CoreCompileInputs.cache
+D:\NamViet\ElsaZone\ElsaZone.Utilities\obj\Debug\net7.0\ElsaZone.Utilities.dll
+D:\NamViet\ElsaZone\ElsaZone.Utilities\obj\Debug\net7.0\refint\ElsaZone.Utilities.dll
+D:\NamViet\ElsaZone\ElsaZone.Utilities\obj\Debug\net7.0\ElsaZone.Utilities.pdb
+D:\NamViet\ElsaZone\ElsaZone.Utilities\obj\Debug\net7.0\ref\ElsaZone.Utilities.dll
