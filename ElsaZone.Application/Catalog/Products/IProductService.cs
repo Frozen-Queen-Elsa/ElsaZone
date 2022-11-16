@@ -15,9 +15,9 @@ public interface IProductService
     Task<bool> UpdateQuantity(int ProductId, int newQuantity);
     Task<bool> AddViewCount(int ProductId);
     Task<bool> UpdateIsDeletedProduct(int ProductId);
-    Task<int> AddImage(int productId, ProductImageCreateRequest request);
+    Task<int> AddImage(int ProductId, ProductImageCreateRequest request);
     Task<int> RemoveImage(int ProductImageId);
-    Task<int> UpdateImage(int imageId, ProductImageUpdateRequest request);
+    Task<int> UpdateImage(int ProductImageId, ProductImageUpdateRequest request);
    
     Task<ProductImageViewModel> GetImageById(int ProductImageId);
     Task<List<ProductImageViewModel>> GetListImages(int ProductId);
@@ -25,4 +25,5 @@ public interface IProductService
     Task<PagedResultBase<ProductsViewModel>> GetAllPaging(GetManageProductPagingRequest request);
     Task<PagedResultBase<ProductsViewModel>> GetAllByCategoryId(GetPublicProductPagingRequest request);
     Task<List<ProductsViewModel>> GetAll();
+
 }

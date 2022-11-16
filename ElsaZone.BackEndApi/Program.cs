@@ -14,9 +14,12 @@ builder.Services.AddDbContext<ElsaZoneDbContext>(options =>
 
 builder.Services.AddTransient<IStorageService, FileStorageService>();
 builder.Services.AddTransient<IProductService, ProductService>();
+
+builder.Services.AddControllersWithViews();
+
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger eShop Solution", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger ElsaZone", Version = "v1" });
 
 });
 
@@ -41,7 +44,7 @@ app.UseSwagger();
 
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger eShopSolution V1");
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger ElsaZone V1");
 });
 
 app.MapControllerRoute(

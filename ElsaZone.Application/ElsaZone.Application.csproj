@@ -18,7 +18,6 @@
 
     <ItemGroup>
       <Folder Include="Catalog\Categories" />
-      <Folder Include="System" />
       <Folder Include="Utilities\Slides" />
     </ItemGroup>
 

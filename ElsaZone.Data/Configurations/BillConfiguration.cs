@@ -25,5 +25,6 @@ public class BillConfiguration:IEntityTypeConfiguration<Bill>
         builder.Property(x => x.CreatedDate).IsRequired().HasDefaultValueSql("getdate()");
         builder.Property(x => x.Note).IsRequired(false).IsUnicode().HasMaxLength(200);
         builder.Property(x => x.IsDeleted).IsRequired().HasDefaultValue(IsDeleted.Normal);
+        builder.HasOne(x=>x.AppUser).WithMany(x=>x.Bills).HasForeignKey(x => x.UserName);
     }
 }

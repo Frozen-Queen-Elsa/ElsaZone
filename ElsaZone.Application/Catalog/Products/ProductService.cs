@@ -178,14 +178,14 @@ public class ProductService:IProductService
         return await _context.SaveChangesAsync()>0;
     }
 
-    public async Task<int> AddImage(int productId, ProductImageCreateRequest request)
+    public async Task<int> AddImage(int ProductId, ProductImageCreateRequest request)
     {
         var productImage = new ProductImage()
         {
             Caption = request.Caption,
             CreatedDate = DateTime.Now,
             IsDefault = IsDefault.Normal,
-            ProductId = productId,
+            ProductId = ProductId,
             SortOrder = request.SortOrder
         };
 
@@ -218,6 +218,7 @@ public class ProductService:IProductService
         {
             productImage.ImagePath = await this.SaveFile(request.ImageFile);
             productImage.FileSize = request.ImageFile.Length;
+            productImage.UpdatedDate=DateTime.Now;
         }
         _context.ProductImages.Update(productImage);
         return await _context.SaveChangesAsync();
@@ -293,7 +294,7 @@ public class ProductService:IProductService
                     SEOTitle = x.p.SEOTitle,
            
                     CreatedDate = x.p.CreatedDate,
-                    UpdatedDate = x.p.CreatedDate,
+                    UpdatedDate = x.p.UpdatedDate,
                     IsDeleted = x.p.IsDeleted,
                     Status = x.p.Status,
                     ViewCount = x.p.ViewCount,
@@ -353,7 +354,7 @@ public class ProductService:IProductService
                 SEOTitle = x.p.SEOTitle,
     
                 CreatedDate = x.p.CreatedDate,
-                UpdatedDate = x.p.CreatedDate,
+                UpdatedDate = x.p.UpdatedDate,
                 IsDeleted = x.p.IsDeleted,
                 Status = x.p.Status,
                 ViewCount = x.p.ViewCount,
@@ -391,7 +392,7 @@ public class ProductService:IProductService
                 SEOTitle = x.p.SEOTitle,
     
                 CreatedDate = x.p.CreatedDate,
-                UpdatedDate = x.p.CreatedDate,
+                UpdatedDate = x.p.UpdatedDate,
                 IsDeleted = x.p.IsDeleted,
                 Status = x.p.Status,
                 ViewCount = x.p.ViewCount,

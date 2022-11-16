@@ -2,13 +2,14 @@ using System.Security.Cryptography;
 using ElsaZone.Data.Configurations;
 using ElsaZone.Data.Entities;
 using ElsaZone.Data.Extension;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 
 namespace ElsaZone.Data.EF;
 
-public class ElsaZoneDbContext:DbContext
+public class ElsaZoneDbContext: IdentityDbContext<AppUser, AppRole, Guid>
 {
     public ElsaZoneDbContext(DbContextOptions options) : base(options)
     {
@@ -18,7 +19,7 @@ public class ElsaZoneDbContext:DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         //Configure using Fluent API
-        modelBuilder.ApplyConfiguration(new AccountConfiguration());
+   
         modelBuilder.ApplyConfiguration(new AdminConfiguration());
         modelBuilder.ApplyConfiguration(new BillConfiguration());
         modelBuilder.ApplyConfiguration(new BillDetailConfiguration());
@@ -31,11 +32,20 @@ public class ElsaZoneDbContext:DbContext
         modelBuilder.ApplyConfiguration(new RateConfiguration());
         modelBuilder.ApplyConfiguration(new SystemLogConfiguration());
         modelBuilder.ApplyConfiguration(new TransactionConfiguration());
+        modelBuilder.ApplyConfiguration(new AppUserConfiguration());
+        modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
+        modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
+        modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.UserId, x.RoleId });
+        modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
+
+        modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
+        modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
+
         //Data seeding
         modelBuilder.Seed();
     }
 
-    public DbSet<Account> Accounts { get; set; }
+    
     public DbSet<Admin> Admins { get; set; }
     public DbSet<Bill> Bills { get; set; }
     public DbSet<BillDetail> BillDetails { get; set; }

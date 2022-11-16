@@ -11,16 +11,66 @@ public static class ModelBuilderExtensions
 {
     public static void Seed(this ModelBuilder modelBuilder)
     {
-        var hasher = new PasswordHasher<Account>();
-        modelBuilder.Entity<Account>().HasData(
-            new Account()
+        // any guid
+        var roleId = new Guid("8D04DCE2-969A-435D-BBA4-DF3F325983DC");
+        var adminId = new Guid("69BD714F-9576-45BA-B5B7-F00649BE00DE");
+        var userId = new Guid("3E41E8AB-CCEA-41B1-B254-5157BEDF139B");
+        
+        modelBuilder.Entity<AppRole>().HasData(
+            new AppRole
             {
-                AccountId = "meangirl",
-                Password = MD5Helper.MD5Hash("123"),
+                Id = adminId,
+                Name = "admin",
+                NormalizedName = "admin",
+                Description = "Administrator role"
+            },
+            new AppRole
+            {
+                Id = userId,
+                Name = "user",
+                NormalizedName = "User",
+                Description = "User role"
+            });
+
+        var hasher = new PasswordHasher<AppUser>();
+
+        modelBuilder.Entity<AppUser>().HasData(
+            new AppUser()
+            {
+                Id = userId,
+                UserName = "admin",
+                NormalizedUserName = "admin",
+                PasswordHash = hasher.HashPassword(null, "123"),
+                SecurityStamp = string.Empty,
+                EmailConfirmed = true,
+                DisplayName = "Admin",
+                Fullname = "Admin",
+                Gender = Gender.Female,
+                Email="admin@gmail.com",
+                NormalizedEmail ="admin@gmail.com",
+                DOB=new DateTime(1992,03,09),
+                PhoneNumber="0123456789",
+                Avatar = "123",
+                MoneyBalance = 987654321,
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                
+                IsDeleted = IsDeleted.Normal,
+                IsActive = IsActive.Offline
+            },
+            new AppUser()
+            {
+                Id = userId,
+                UserName = "Elsa",
+                NormalizedUserName = "elsa",
+                PasswordHash = hasher.HashPassword(null, "123"),
+                SecurityStamp = string.Empty,
+                EmailConfirmed = true,
                 DisplayName = "Frozen Queen Elsa",
                 Fullname = "Frozen Queen Elsa",
                 Gender = Gender.Female,
                 Email="FrozenQueenElsa@gmail.com",
+                NormalizedEmail = "frozenqueenelsa@gmail.com",
                 DOB=new DateTime(1992,03,09),
                 PhoneNumber="0123456789",
                 Avatar = "123",

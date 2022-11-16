@@ -17,13 +17,14 @@ public class RateConfiguration:IEntityTypeConfiguration<Rate>
         builder.HasKey(x => x.RateId);
         builder.Property(x => x.RateId).UseIdentityColumn();
         builder.Property(x => x.ProductId).IsRequired(true);
-        builder.Property(x => x.AccountId).IsRequired(true).HasMaxLength(50);
+
         builder.Property(x => x.Comment).HasMaxLength(255).IsUnicode(true).IsRequired(false);
         builder.Property(x => x.Description).HasMaxLength(100).IsUnicode(true).IsRequired(false);
         builder.Property(x => x.CreatedDate).IsRequired().HasDefaultValueSql("getdate()");
 
         builder.Property(x => x.IsDeleted).IsRequired().HasDefaultValue(IsDeleted.Normal);
         builder.HasOne(x => x.Product).WithMany(x => x.Rates).HasForeignKey(x => x.ProductId);
-        builder.HasOne(x => x.Account).WithMany(x => x.Rates).HasForeignKey(x => x.AccountId);
+        builder.HasOne(x => x.AppUser).WithMany(x => x.Rates).HasForeignKey(x => x.UserName);
+        
     }
 }

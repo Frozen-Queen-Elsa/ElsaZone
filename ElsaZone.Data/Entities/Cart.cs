@@ -5,12 +5,12 @@ namespace ElsaZone.Data.Entities;
 public class Cart
 {
     public int CartId { set; get; }
-    public string AccountId { set; get; }
+    public string UserName { set; get; }
     public int ProductId { set; get; }
     public int Quantity { set; get; }
     public decimal Price { set; get; }
     /*==========================================*/
     public Product Product { get; set; }
-    public Account Account { get; set; }
+    public AppUser AppUser { get; set; }
     
 }

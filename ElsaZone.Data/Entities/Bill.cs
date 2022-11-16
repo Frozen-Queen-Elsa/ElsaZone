@@ -7,6 +7,7 @@ namespace ElsaZone.Data.Entities;
 public class Bill
 {
     public int BillId { set; get; }
+    public string UserName { get; set; }
     public string BillCode { set; get; }
     public string Name { set; get; }
     public string Email { get; set; }
@@ -23,4 +24,5 @@ public class Bill
     public IsDeleted IsDeleted { set; get; }
     public int DeliveredStatus { get; set; }
     /*==========================================*/
+    public AppUser AppUser { get; set; }
 }
