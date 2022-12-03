@@ -10,12 +10,14 @@ namespace ElsaZone.Utilities.Helper
             {
                 using (var tdes = new TripleDESCryptoServiceProvider())
                 {
+                
                     tdes.Key = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes("123###"));
                     tdes.Mode = CipherMode.ECB;
                     tdes.Padding = PaddingMode.PKCS7;
 
                     using (var transform = tdes.CreateEncryptor())
                     {
+                    
                         byte[] textBytes = UTF8Encoding.UTF8.GetBytes(input);
                         byte[] bytes = transform.TransformFinalBlock(textBytes, 0, textBytes.Length);
                         return Convert.ToBase64String(bytes, 0, bytes.Length);
